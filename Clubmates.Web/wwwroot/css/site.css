@@ -1,0 +1,72 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.dark-header {
+    background-color: #000; /* Change to a darker color as needed */
+}
+.form{
+    
+    padding:20px 30px;
+    border-radius:10px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    max-width:400px;
+
+}
+.clubmates-form-container{
+    align-content:center;
+    justify-content:center;
+    display:flex;
+    
+    animation:zoomOut 1.5s ease-in-out;
+}
+.form-group{
+    padding:4px 7px 10px 4px;
+}
+.card{
+    background:black;
+    color:white;
+    border-radius:10px;
+}
+.btn-primary{
+    border-radius:12px !important;
+    background-color:#ffc107 !important;
+}
+.btn-primary:hover{
+    border-radius:20px;
+    background-color:#d7930b !important;
+
+
+}
+.clubbutton{
+width:30%;
+
+
+}
+@keyframes zoomOut{
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform:scale(1);
+
+    }
+}

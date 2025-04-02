@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Clubmates.Web.Models.AdminViewModel.ClubViewModel>
+
+@{
+
+    ViewBag.Title = "Manage Club";
+
+}
+<div class="form-container">
+
+    @if (Model != null && Model.Any())
+
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Club Name</th>
+                    <th>Club Category</th>
+                    <th>Club Type</th>
+                    <th>Club Manager Email</th>
+                    <th>Club Email</th>
+
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var club in Model)
+
+                {
+                    <tr>
+                        <td>@club.ClubName</td>
+                        <td>@Enum.GetName(club.ClubCategory)</td>
+                        <td>@Enum.GetName(club.ClubType)</td>
+                        <td>@club.ClubManagerEmail</td>
+                        <td>@club.ClubEmail</td>
+
+
+                        <td>
+                            <a asp-controller="Admin" asp-action="EditClub" asp-route-clubId="@club.ClubId" class="btn btn-primary">Edit</a>
+                            <a asp-controller="Admin" asp-action="DeleteClub" asp-route-clubId="@club.ClubId" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    }
+
+    else
+
+    {
+        <h3>No clubs found</h3>
+
+    }
+    <div class="btnTop">
+        <a asp-action="CreateClub" asp-controller="Admin" class="btn btn-success mb-3 btn-primary">Create  new Club</a>
+    </div>
+</div>

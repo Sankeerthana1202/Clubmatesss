@@ -1,0 +1,35 @@
+﻿@model Clubmates.Web.Models.AccountView.RegisterViewModel
+@{
+    ViewBag.Title = "Sign Up";
+}
+<div class="clubmates-form-container">
+    <form method="post" class="form" asp-controller="Account" asp-action="Register">
+        <div>
+            <h4>
+                Create Account with us
+            </h4>
+        </div>
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="FullName">Full Name</label>
+            <input type="text" asp-for="FullName" name="FullName" id="FullName" value="@Model.FullName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input type="email" asp-for="Email"  name="Email"id="Email" value="@Model.Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input type="password" asp-for="Password" name="Password" id="Password" value="@Model.Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Confirm Password</label>
+            <input type="password" asp-for="ConfirmPassword" name="ConfirmPassword" id="ConfirmPassword" value="@Model.ConfirmPassword" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+       
+    </form>
+</div>

@@ -1,0 +1,18 @@
+﻿@model Clubmatesss.Models.Department
+@{
+    ViewBag.Title = "AddDepartment";
+}
+
+<form action="/Department/AddDepartment" method="post">
+    <label>Name</label>
+    <input type="text" name="DepartmentName" value="@Model.DepartmentName" />
+    <br />
+    <label>ID</label>
+    <input type="text" name="DepartmentID" value="@Model.DepartmentID" />
+    <br />
+
+
+
+    <button type="submit">Save</button>
+
+</form>

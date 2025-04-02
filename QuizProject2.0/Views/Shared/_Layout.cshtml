@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CareerGuidance</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/QuizProject2._0.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="p-3 text-bg-dark dark-header">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <h4>Career Guidance</h4>
+                    <li><a asp-controller="Home" asp-action="Index" class="nav-link px-2 text-secondary">Home</a></li>
+                    
+                   
+
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control bg-light text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+                @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <p class="text-white">Welcome @User.Identity.Name</p>
+                    <div class="text-end">
+                        <a asp-area="" asp-controller="Account" asp-action="Logout" class="btn btn-outline-light me-2">Logout</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-end">
+                        <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-outline-light me-2">Login</a>
+                        <a asp-area="" asp-controller="Account" asp-action="Register" class="btn btn-warning">Sign-up</a>
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Career Guidance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
